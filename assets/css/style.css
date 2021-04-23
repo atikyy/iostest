@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face{
+    font-family: "Slack-Light";
+    src: url("/fonts/Slack-Light.woff") format ("woff"),
+         url("/fonts/Slack-light.woff2") format ("woff2");
+    
+}
+
+
+body {
+	line-height: 1;
+	font-family: "Slack-Light";
+    font-variant-numeric: lining-nums;
+}
+
+
+
+canvas {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    pointer-events: none;
+}
+
+main{
+    height: 100vh;
+    z-index: auto;
+    position: relative;
+    line-height: 0;
+
+}
+
+video {
+    width: 100% !important;
+    height: auto !important;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+video:focus {
+	outline:0;
+}
+
+.fadeout {
+    color: red;
+    opacity: 0;
+    -webkit-animation: fadeout 5s;
+    -moz-animation: fadeout 5s;
+    -ms-animation: fadeout 5s;
+    -o-animation: fadeout 5s;
+    animation: fadeout 5s;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+img {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+  }
+img[width] {
+	width: auto; /* Defer to max-width */
+  }
+img[width][height] {
+	height: auto; /* Preserve aspect ratio */
+}
+
+/* Let SVG scale without boundaries */
+  img[src$=".svg"] {
+	width: 100%;
+	height: auto;
+	max-width: none;
+}
+
+
+
+
+.wrappertop, .wrapperbottom{
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-feature-settings: "dlig", "liga", "ss01", "tnum", "frac";
+}
+
+.wrappertop{
+    top: 0; 
+    height: 0;
+    left: -500vw;
+    z-index: 100;
+
+}
+
+.wrapperbottom{
+    bottom: 100vh; 
+    height: 0; 
+    left: 50vw; 
+    z-index: 101;
+}
+
+.container1, .container2{width: 500vw;}
+
+.container1 p, .container2 p{
+    position: absolute;
+    color: white;
+    font-size: 10rem;
+    pointer-events: auto;
+}
+
+.container1 p{
+    top: 0;
+}
+
+
+.container2 p{top: -1.2em;}
+.container2 a{
+    padding-right: 20vh;
+    text-decoration: none;
+    color: white;}
+
+
+
+@media screen and (max-width: 768px){
+    canvas{display: none;}
+    .container1 p, .container2 p{font-size: 4rem;}
+}
